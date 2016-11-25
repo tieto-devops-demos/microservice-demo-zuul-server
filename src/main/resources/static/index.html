@@ -1,93 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Order Processing</title>
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-<style>
-	body {
-	    font-family: 'Segoe UI', Arial;
-	    font-size: 16px;
-		padding: 0px 20px;	
-	}
-    h1 {
-    	font-size: 32px;
-    	font-weight: bold;
-    }
-	.container {
-		margin: 0px;
-		padding: 0px;
-	}
-	.row {
-		margin-bottom: 15px;
-		margin-top: 10px;
-	}
-</style>
-</head>
-<body>
-	<h1>Order Processing</h1>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2">
-				<a href="/customer/list.html">Customer</a>
-			</div>
-			<div class="col-md-4">List / add / remove customers</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<a href="/catalog/list.html">Catalog</a>
-			</div>
-			<div class="col-md-4">List / add / remove items</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<a href="/catalog/searchForm.html">Catalog</a>
-			</div>
-			<div class="col-md-4">Search Items</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<a href="/order/">Order</a>
-			</div>
-			<div class="col-md-4">Create an order</div>
-		</div>
+	<head>
+		<title>E-commerce Manager</title>
 		<!--
-		<div class="row">
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="http://localhost:18761/">Eureka (Vagrant)</a>
-			</div>
-			<div class="col-md-4">Service discovery</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-				<a href="/" onclick="javascript:event.target.port=8761">Eureka (Docker Compose / Docker Machine)</a>
-			</div>
-			<div class="col-md-4">Service discovery</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-			<a href="http://localhost:18989/hystrix">Hystrix dashboard (Vagrant Go Poland!)</a>
-			</div>
-			<div class="col-md-4">Monitor state of Hystrix</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
-			<a href="/hystrix" onclick="javascript:event.target.port=8989">Hystrix dashboard (Docker Compose / Docker Machine)</a>
-			</div>
-			<div class="col-md-4">Monitor state of Hystrix</div>
-		</div>
-		-->	
-	</div>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		-->
+		<style>
+			body {
+			    font-family: 'Segoe UI', Arial;
+			    font-size: 16px;
+			    margin: 0px;
+			    padding: 0px;
+			}
+		    h1 {
+		    	font-size: 32px;
+		    	font-weight: bold;
+		    }
+		    .brand {
+		    	display: none;
+		    }
+			.page-header {
+				background-image: url('/images/electronic2.jpg');
+			    background-color: #282830;
+				background-size: 100%;
+    			background-position-y: 936px;
+    		    height: 142px;
+			    margin: 0px;
+			    padding: 0px 30px;
+			    top: 0px;
+			    left: 0px;
+			    width: calc(100% - 60px);
+			    position: absolute;
+  			}
+  			.page-header .title {
+  				color: #ffffff;
+  				margin-top: 0px;
+  			}
+  			.page-header .subtitle {
+  				color: #ffffff;
+  				margin-top: 20px;
+  			}
+  			.page-header .tab {
+			    background-color: #111122;
+  				color: #ffffff;
+  				display: inline-block;
+    			padding: 8px 24px;
+  				text-decoration: none;
+    		}
+  			.page-header .tab.selected,
+  			.page-header .tab:hover {
+			    background-color: #ffffff;
+  				color: #000000;
+    		}
+			.page-content {
+				border: none;
+			    height: calc(100% - 142px);
+			    padding: 0px 0px;
+			    width: 100%;
+			    position: absolute;
+			    top: 142px;
+    		}
+			.row {
+				margin: 20px 0px;
+			}
+		    .row:last-of-type {
+		    }
+		</style>
+		<script>
+			function goToTab(tab, url) {
+				console.log("### GO TO TAB");
+				console.log(this);
+				console.log(tab + " / " + url);
 
-</body>
+				var selectedTabs = document.getElementsByClassName('tab selected');
+				for (var i = 0; i < selectedTabs.length; i++) {
+				    selectedTabs[i].className = 'tab';
+				}
+
+				document.getElementById('tab-' + tab).classList.add('selected');
+
+				document.getElementById('page-content').src = url;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="page-header">
+			<div class="subtitle">Microservices Demo</div>
+			<h1 class="title">E-commerce Manager</h1>
+			<div class="tabs row">
+				<a id="tab-products" class="tab selected" href="javascript:goToTab('products', '/catalog/list.html')" title="List / add / remove items">Products</a>
+				<a id="tab-customers" class="tab" href="javascript:goToTab('customers', '/customer/list.html')" title="List / add / remove customers">Customers</a>
+				<a id="tab-orders" class="tab" href="javascript:goToTab('orders', '/order/')" title="List and create orders">Orders</a>
+				<!--
+				<a id="tab-search" class="tab" href="javascript:goToTab('search', '/catalog/searchForm.html')" name="Search Items">Search Catalog</a>
+				-->
+			</div>
+			<!--
+			<div class="row">
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<a href="http://localhost:18761/">Eureka (Vagrant)</a>
+				</div>
+				<div class="col-md-4">Service discovery</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<a href="/" onclick="javascript:event.target.port=8761">Eureka (Docker Compose / Docker Machine)</a>
+				</div>
+				<div class="col-md-4">Service discovery</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+				<a href="http://localhost:18989/hystrix">Hystrix dashboard (Vagrant Go Poland!)</a>
+				</div>
+				<div class="col-md-4">Monitor state of Hystrix</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+				<a href="/hystrix" onclick="javascript:event.target.port=8989">Hystrix dashboard (Docker Compose / Docker Machine)</a>
+				</div>
+				<div class="col-md-4">Monitor state of Hystrix</div>
+			</div>
+			-->	
+		</div>
+		<iframe id="page-content" class="page-content" name="page-content" src="/catalog/list.html">
+		</iframe>
+	</body>
 </html>
