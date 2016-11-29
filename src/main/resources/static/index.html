@@ -11,13 +11,6 @@
 			    margin: 0px;
 			    padding: 0px;
 			}
-		    h1 {
-		    	font-size: 32px;
-		    	font-weight: bold;
-		    }
-		    .brand {
-		    	display: none;
-		    }
 			.page-header {
 				background-image: url('/images/electronic2.jpg');
 			    background-color: #282830;
@@ -33,6 +26,8 @@
   			}
   			.page-header .title {
   				color: #ffffff;
+		    	font-size: 32px;
+		    	font-weight: bold;
   				margin-top: 0px;
   			}
   			.page-header .subtitle {
@@ -40,7 +35,7 @@
   				margin-top: 20px;
   			}
   			.page-header .tab {
-		        background-color: #444466;
+		        background-color: #444477;
   				color: #ffffff;
   				display: inline-block;
     			padding: 8px 24px;
@@ -52,28 +47,21 @@
   				color: #000000;
     		}
 			.page-content {
-				border: none;
-			    height: calc(100% - 142px);
-			    padding: 0px 0px;
-			    width: 100%;
-			    position: absolute;
-			    top: 142px;
+			    padding: 30px;
     		}
-			.row {
-				margin: 20px 0px;
-			}
-		    .row:last-of-type {
-		    }
 		</style>
 	</head>
 	<body>
 		<div class="page-header">
-			<div class="subtitle">Microservices Demo2</div>
-			<h1 class="title">E-commerce Manager Demo</h1>
+			<div class="subtitle">Microservices Demo</div>
+			<h1 class="title">E-commerce Manager</h1>
 			<div class="tabs row">
 				<a id="tab-products" class="tab selected" href="/catalog/list.html" title="List / add / remove items">Products</a>
 				<a id="tab-customers" class="tab" href="/customer/list.html" title="List / add / remove customers">Customers</a>
 				<a id="tab-orders" class="tab" href="/order/" title="List and create orders">Orders</a>
+			</div>
+			<div class="page-content">
+				Loading...
 			</div>
 		</div>
 	</body>
