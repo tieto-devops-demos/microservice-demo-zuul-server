@@ -28,7 +28,13 @@ compile:
             - task: sudo docker build -f Dockerfile -t zuul:$GO_PIPELINE_COUNTER .
               build_path: .
               run_if_conditions: passed
-  
+            - task: sudo docker login -u eekamak -p $passu
+              run_if_conditions: passed
+            - task: sudo docker tag zuul:$GO_PIPELINE_COUNTER andon/zuul:$GO_PIPELINE_COUNTER
+            - task: sudo docker push andon/zuul:$GO_PIPELINE_COUNTER
+            - task: sudo docker tag zuul:$GO_PIPELINE_COUNTER andon/zuul:latest
+            - task: sudo docker push andon/zuul:latest
+
 post_stage:
   go_cd_agent_props:
     - node:5
