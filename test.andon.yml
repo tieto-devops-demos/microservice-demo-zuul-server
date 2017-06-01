@@ -13,6 +13,6 @@ pipelines:
               tasks:
                - exec: # indicates type of task
                    command: bash
-                   arguments:`
+                   arguments:
                     - "-c"
                     - "echo foo"
