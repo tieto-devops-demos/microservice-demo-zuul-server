@@ -10,6 +10,7 @@ pipelines:
       - build: # name of stage
           jobs:
             maven: # name of the job
+              elastic_profile_id: "agent"
               tasks:
                - exec: # indicates type of task
                    command: bash
