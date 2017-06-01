@@ -1,6 +1,6 @@
 # test.andon.yml
 pipelines:
-  pipe1:
+  Zuul:
     group: eCommerce
     materials:
       zuul:  # this is the name of material
