@@ -15,5 +15,6 @@ pipelines:
                - exec: # indicates type of task
                    command: bash
                    arguments:
+                    - "-c" 
                     - "sleep 90"
                     
