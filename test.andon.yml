@@ -13,9 +13,9 @@ pipelines:
     stages:
       - build: # name of stage
           jobs:
-            andon:
-              sonarqube: true
             maven: # name of the job
+              andon:
+                sonarqube: true
               elastic_profile_id: "agent"
               tasks:
                - exec: # indicates type of task
