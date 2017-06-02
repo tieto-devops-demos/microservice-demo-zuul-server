@@ -16,5 +16,5 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c" 
-                    - "sleep 90"
+                    - "echo foo"
                     
