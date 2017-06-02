@@ -1,4 +1,8 @@
 # test.andon.yml
+environments:
+  compiling:
+    pipelines:
+      - Zuul
 pipelines:
   Zuul:
     group: eCommerce
