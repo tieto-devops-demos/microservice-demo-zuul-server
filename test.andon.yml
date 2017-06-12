@@ -17,7 +17,7 @@ pipelines:
               andon:
                 sonarqube: true
               elastic_profile_id: "agent"
-                environment: "ANDON_SONARQUBE=true"
+                environment: "ANDON_FOOBAR=true"
               tasks:
                - exec: # indicates type of task
                    command: bash
