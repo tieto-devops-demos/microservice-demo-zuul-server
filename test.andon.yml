@@ -1,8 +1,8 @@
 # test.andon.yml
-environments:
-  agent:
-    pipelines:
-      - Zuul
+#environments:
+#  agent:
+#    pipelines:
+#      - Zuul
 pipelines:
   Zuul:
     group: eCommerce
