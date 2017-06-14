@@ -1,6 +1,6 @@
 # test.andon.yml
-#environments:
-#  agent:
+environments:
+  env1:
 #    pipelines:
 #      - Zuul
 pipelines:
