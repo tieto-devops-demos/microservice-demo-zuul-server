@@ -15,7 +15,7 @@ pipelines:
           jobs:
             maven: # name of the job
               andon:
-                image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-elastic-ubuntu1604-base:17.04"
+                image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-elastic-ubuntu1604-base:17.04" # elastic agent image
                 sonarqube: true
               elastic_profile_id: "agent"
               tasks:
