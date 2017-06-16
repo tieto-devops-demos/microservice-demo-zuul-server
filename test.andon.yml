@@ -24,7 +24,7 @@ pipelines:
                    arguments:
                     - "-c" 
                     - "echo foo"
-              tasks:
+#              tasks:
                - exec: # indicates type of task
                    command: bash
                    arguments:
