@@ -1,8 +1,4 @@
 # test.andon.yml
-#environments:
-#  agent:
-#    pipelines:
-#      - Zuul
 pipelines:
   Zuul:
     environment_variables:
