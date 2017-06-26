@@ -20,7 +20,7 @@ pipelines:
               andon: # andon job configuration
                 image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:17.04" # elastic agent image
 #                sonarqube: true
-#                stormrunner: true
+                stormrunner: true
               elastic_profile_id: "agent"
               tasks:
                - exec: # indicates type of task
