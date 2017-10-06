@@ -37,7 +37,7 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c" 
-                    - "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar -Dsonar.login=$SONARUSER -Dsonar.password=$SONARPASSWORD -Dsonar.host.url=http://sonarqube:9000"
+                    - "mvn sonar:sonar -Dsonar.login=$SONARUSER -Dsonar.password=$SONARPASSWORD -Dsonar.host.url=http://sonarqube:9000"
                - exec: # indicates type of task
                    command: bash
                    arguments:
