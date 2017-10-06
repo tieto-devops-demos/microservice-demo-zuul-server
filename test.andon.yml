@@ -16,7 +16,7 @@ pipelines:
               andon: # andon job configuration
                 image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:v17.10.0" # elastic agent image
                 sonarqube:
-                  - version: "6.2"
+                  version: "6.2"
                 stormrunner: true
                 ui_def_variables:
                   - DOCKER_USER
