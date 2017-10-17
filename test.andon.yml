@@ -38,8 +38,3 @@ pipelines:
                    arguments:
                     - "-c" 
                     - "docker build -f Dockerfile -t zuul:$GO_PIPELINE_COUNTER ."                    
-               - exec: # indicates type of task
-                   command: bash
-                   arguments:
-                    - "-c" 
-                    - "sleep 5m"                    
