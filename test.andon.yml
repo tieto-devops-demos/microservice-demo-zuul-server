@@ -17,6 +17,10 @@ pipelines:
                 image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:v17.12.0" # elastic agent image
                 sonarqube: true
                 stormrunner: true
+                ui_def_secure_variables
+                  - PASSWORD
+                ui_def_variables
+                  - USER
               tasks:
                - exec: # indicates type of task
                    command: bash
