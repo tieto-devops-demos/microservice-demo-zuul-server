@@ -1,6 +1,6 @@
 # test.andon.yml
 pipelines:
-  Zuul_test:
+  Zuul:
     environment_variables:
       SONARUSER: admin
       SONARPASSWORD: admin
