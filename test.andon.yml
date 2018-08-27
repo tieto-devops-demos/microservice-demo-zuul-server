@@ -14,7 +14,7 @@ pipelines:
           jobs:
             maven: # name of the job
               andon: # andon job configuration
-                image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:v18.5.0" # elastic agent image
+                image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:v18.6.0" # elastic agent image
                 sonarqube: true
 #                stormrunner: true
                 ui_def_secure_variables:
@@ -36,4 +36,10 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c" 
-                    - "docker build -f Dockerfile -t zuul:$GO_PIPELINE_COUNTER ."                    
+                    - "docker build -f Dockerfile -t zuul:$GO_PIPELINE_COUNTER ."
+               - exec: # indicates type of task
+                   command: bash
+                   arguments:
+                    - "-c" 
+                    - sleep 5m
+                    
